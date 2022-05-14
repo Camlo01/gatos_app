@@ -1,19 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.cats.gatos_app;
 
 /**
  *
  * @author Camilo
  */
-public class Gatos {
+public class GatosFav {
 
     String id;
-    String url;
+    String image_id;
     String apikey = "fb5761b6-eb9a-40c0-a8e5-382ed5da6b0e";
-    String image;
+    Imagex image;
 
     public String getId() {
         return id;
@@ -23,12 +19,12 @@ public class Gatos {
         this.id = id;
     }
 
-    public String getUrl() {
-        return url;
+    public String getImage_id() {
+        return image_id;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setImage_id(String image_id) {
+        this.image_id = image_id;
     }
 
     public String getApikey() {
@@ -39,11 +35,11 @@ public class Gatos {
         this.apikey = apikey;
     }
 
-    public String getImage() {
+    public Imagex getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Imagex image) {
         this.image = image;
     }
 
