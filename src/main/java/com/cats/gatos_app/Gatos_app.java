@@ -1,4 +1,4 @@
-package com.cats.gatos_app.View;
+package com.cats.gatos_app;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
