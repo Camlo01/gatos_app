@@ -1,9 +1,13 @@
+package com.cats.gatos_app.View;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-package com.cats.gatos_app;
 
+
+import com.cats.gatos_app.Model.Gatos;
+import com.cats.gatos_app.Controller.GatosService;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 

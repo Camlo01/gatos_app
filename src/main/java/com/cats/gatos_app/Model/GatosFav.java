@@ -1,4 +1,4 @@
-package com.cats.gatos_app;
+package com.cats.gatos_app.Model;
 
 /**
  *
@@ -6,10 +6,10 @@ package com.cats.gatos_app;
  */
 public class GatosFav {
 
-    String id;
-    String image_id;
-    String apikey = "fb5761b6-eb9a-40c0-a8e5-382ed5da6b0e";
-    Imagex image;
+    private String id;
+    private String image_id;
+    private String apikey = "fb5761b6-eb9a-40c0-a8e5-382ed5da6b0e";
+    public Imagex image;
 
     public String getId() {
         return id;

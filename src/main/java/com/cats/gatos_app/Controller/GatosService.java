@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.cats.gatos_app;
+package com.cats.gatos_app.Controller;
 
+import com.cats.gatos_app.Model.Gatos;
+import com.cats.gatos_app.Model.GatosFav;
 import com.google.gson.Gson;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -24,6 +26,7 @@ import javax.swing.JOptionPane;
 public class GatosService {
 
     public static void verGatos() throws IOException {
+
         System.out.println("se ejecuta verGatos()");
         //1. traer los datos de la API
         OkHttpClient client = new OkHttpClient();

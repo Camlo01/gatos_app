@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.cats.gatos_app;
+package com.cats.gatos_app.Model;
 
 /**
  *
@@ -10,10 +10,10 @@ package com.cats.gatos_app;
  */
 public class Gatos {
 
-    String id;
-    String url;
-    String apikey = "fb5761b6-eb9a-40c0-a8e5-382ed5da6b0e";
-    String image;
+    private String id;
+    private String url;
+    private String apikey = "fb5761b6-eb9a-40c0-a8e5-382ed5da6b0e";
+    private String image;
 
     public String getId() {
         return id;

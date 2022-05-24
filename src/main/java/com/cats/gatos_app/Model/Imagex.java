@@ -1,4 +1,4 @@
-package com.cats.gatos_app;
+package com.cats.gatos_app.Model;
 
 /**
  *
@@ -6,8 +6,8 @@ package com.cats.gatos_app;
  */
 public class Imagex {
 
-    String id;
-    String url;
+    private String id;
+    private String url;
 
     public String getId() {
         return id;
