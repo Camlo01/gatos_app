@@ -26,15 +26,14 @@ public class Gatos_app {
 
         do {
 //            Menu principal
-//            String opcion = (String) JOptionPane.showInputDialog(null, "Gatitos Java", "Menu principal", JOptionPane.INFORMATION_MESSAGE, null, botones, botones[0]);
-            Inicio inicio = new Inicio();
-            inicio.setVisible(true);
+            String opcion = (String) JOptionPane.showInputDialog(null, "Gatitos Java", "Menu principal", JOptionPane.INFORMATION_MESSAGE, null, botones, botones[0]);
+//            Inicio inicio = new Inicio();
+//            inicio.setVisible(true);
 
 //Validar seleccion usuario
             for (int i = 0; i < botones.length; i++) {
                 if (opcion.equals(botones[i])) {
                     opcion_menu = i;
-
                 }
             }
             switch (opcion_menu) {

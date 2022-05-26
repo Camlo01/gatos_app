@@ -43,6 +43,7 @@ public class GatosService {
         System.out.println(gatos);
         //Redimencionar en caso de necesitar
         Image image = null;
+
         try {
             URL url = new URL(gatos.getUrl());
 
@@ -54,10 +55,7 @@ public class GatosService {
                 Image modificada = fondo.getScaledInstance(800, 600, java.awt.Image.SCALE_SMOOTH);
                 fondoGato = new ImageIcon(modificada);
             }
-            String menu = "Opciones: \n "
-                    + "1. ver otra imagen\n "
-                    + "2. Marcar favorito\n "
-                    + "3. Volver \n ";
+            String menu = "Opciones: \n " + "1. ver otra imagen\n " + "2. Marcar favorito\n " + "3. Volver \n ";
             String[] botones = {"Ver otra imagen", "favorito", "volver"};
             String id_gato = gatos.getId();
             String opcion = (String) JOptionPane.showInputDialog(null, menu, id_gato, JOptionPane.INFORMATION_MESSAGE, fondoGato, botones, botones[0]);
