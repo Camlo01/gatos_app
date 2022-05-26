@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
  */
 public class GatosService {
 
+    //          ver gatos aleatorios
     public static void verGatos() throws IOException {
 
         System.out.println("se ejecuta verGatos()");
@@ -86,6 +87,7 @@ public class GatosService {
         }
     }
 
+    //                  ver gatos favoritos
     public static void favoritoGato(Gatos gato) {
 
         try {
@@ -185,6 +187,7 @@ public class GatosService {
 
     }
 
+    //              eliminar gatos de favoritos
     public static void borrarFavorito(GatosFav gatofav) {
         try {
             OkHttpClient client = new OkHttpClient();
