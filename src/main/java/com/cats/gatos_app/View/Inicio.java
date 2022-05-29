@@ -4,6 +4,15 @@
  */
 package com.cats.gatos_app.View;
 
+import com.cats.gatos_app.Controller.GatosService;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Camilo
@@ -29,11 +38,11 @@ public class Inicio extends javax.swing.JFrame {
         Title_h1 = new javax.swing.JLabel();
         Title_h2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        PanelButtonsContainer = new javax.swing.JPanel();
         loadRandomCatButton = new javax.swing.JButton();
         loadFavoritesCatsButton = new javax.swing.JButton();
         ButtonUnused = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        panelShowCats = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,24 +57,15 @@ public class Inicio extends javax.swing.JFrame {
         Title_h2.setText("Bienvenido a la aplicación de gatos!");
         Title_h2.setToolTipText("");
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 302, Short.MAX_VALUE)
-        );
+        PanelButtonsContainer.setBackground(new java.awt.Color(153, 153, 153));
 
         loadRandomCatButton.setBackground(new java.awt.Color(0, 102, 0));
         loadRandomCatButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         loadRandomCatButton.setForeground(new java.awt.Color(0, 255, 0));
         loadRandomCatButton.setText("Gatos aleatorios");
         loadRandomCatButton.setToolTipText("");
+        loadRandomCatButton.setMaximumSize(new java.awt.Dimension(183, 36));
+        loadRandomCatButton.setMinimumSize(new java.awt.Dimension(122, 22));
         loadRandomCatButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadRandomCatButtonActionPerformed(evt);
@@ -78,6 +78,8 @@ public class Inicio extends javax.swing.JFrame {
         loadFavoritesCatsButton.setText("Ver Favoritos");
         loadFavoritesCatsButton.setToolTipText("");
         loadFavoritesCatsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        loadFavoritesCatsButton.setMaximumSize(new java.awt.Dimension(183, 36));
+        loadFavoritesCatsButton.setMinimumSize(new java.awt.Dimension(116, 20));
         loadFavoritesCatsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadFavoritesCatsButtonActionPerformed(evt);
@@ -87,23 +89,53 @@ public class Inicio extends javax.swing.JFrame {
         ButtonUnused.setBackground(new java.awt.Color(0, 0, 102));
         ButtonUnused.setForeground(new java.awt.Color(51, 51, 255));
         ButtonUnused.setText("Botón sin usar");
+        ButtonUnused.setMaximumSize(new java.awt.Dimension(382, 36));
+        ButtonUnused.setMinimumSize(new java.awt.Dimension(100, 26));
         ButtonUnused.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonUnusedActionPerformed(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setName(""); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+        javax.swing.GroupLayout PanelButtonsContainerLayout = new javax.swing.GroupLayout(PanelButtonsContainer);
+        PanelButtonsContainer.setLayout(PanelButtonsContainerLayout);
+        PanelButtonsContainerLayout.setHorizontalGroup(
+            PanelButtonsContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsContainerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelButtonsContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PanelButtonsContainerLayout.createSequentialGroup()
+                        .addComponent(loadFavoritesCatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(loadRandomCatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ButtonUnused, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PanelButtonsContainerLayout.setVerticalGroup(
+            PanelButtonsContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelButtonsContainerLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(ButtonUnused, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelButtonsContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loadRandomCatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loadFavoritesCatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        panelShowCats.setBackground(new java.awt.Color(204, 204, 204));
+        panelShowCats.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        panelShowCats.setMinimumSize(new java.awt.Dimension(280, 360));
+        panelShowCats.setName(""); // NOI18N
+
+        javax.swing.GroupLayout panelShowCatsLayout = new javax.swing.GroupLayout(panelShowCats);
+        panelShowCats.setLayout(panelShowCatsLayout);
+        panelShowCatsLayout.setHorizontalGroup(
+            panelShowCatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 552, Short.MAX_VALUE)
+        );
+        panelShowCatsLayout.setVerticalGroup(
+            panelShowCatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 569, Short.MAX_VALUE)
         );
 
@@ -114,33 +146,24 @@ public class Inicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Title_h1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(67, 67, 67)
-                                    .addComponent(Title_h2)
-                                    .addGap(70, 70, 70))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(25, 25, 25)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(loadFavoritesCatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(loadRandomCatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(ButtonUnused, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addComponent(Title_h2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(PanelButtonsContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(476, 476, 476)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(12, 12, 12)
+                                .addComponent(panelShowCats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -155,17 +178,11 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(Title_h1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Title_h2)
-                        .addGap(18, 18, 18)
-                        .addComponent(ButtonUnused, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(loadRandomCatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loadFavoritesCatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(121, 121, 121)
+                        .addComponent(PanelButtonsContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(panelShowCats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
@@ -175,7 +192,13 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loadRandomCatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadRandomCatButtonActionPerformed
-        // TODO add your handling code here:
+
+        try {
+
+        } catch (IOException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_loadRandomCatButtonActionPerformed
 
     private void loadFavoritesCatsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadFavoritesCatsButtonActionPerformed
@@ -223,13 +246,26 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonUnused;
+    private javax.swing.JPanel PanelButtonsContainer;
     private javax.swing.JLabel Title_h1;
     private javax.swing.JLabel Title_h2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loadFavoritesCatsButton;
     private javax.swing.JButton loadRandomCatButton;
+    private javax.swing.JPanel panelShowCats;
     // End of variables declaration//GEN-END:variables
+
+    public JPanel getPanelShowCats() {
+        return panelShowCats;
+    }
+
+    public void setPanelShowCats(JPanel panelShowCats) {
+        this.panelShowCats = panelShowCats;
+    }
+
+    public Inicio(JPanel panelShowCats) {
+        this.panelShowCats = panelShowCats;
+    }
+
 }

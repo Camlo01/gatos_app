@@ -21,14 +21,14 @@ public class Gatos_app {
 
         System.out.println("Aplicacion iniciada");
 
-        String[] botones = {"1. ver gatos", "2. Ver favoritos", "3. Salir"};
+        String[] botones = {"1. ver gatos", "2. Ver favoritos", "3. Salir", "Boton nuevo"};
         int opcion_menu = -1;
 
         do {
 //            Menu principal
-            String opcion = (String) JOptionPane.showInputDialog(null, "Gatitos Java", "Menu principal", JOptionPane.INFORMATION_MESSAGE, null, botones, botones[0]);
-//            Inicio inicio = new Inicio();
-//            inicio.setVisible(true);
+//            String opcion = (String) JOptionPane.showInputDialog(null, "Gatitos Java", "Menu principal", JOptionPane.INFORMATION_MESSAGE, null, botones, botones[0]);
+            Inicio inicio = new Inicio();
+            inicio.setVisible(true);
 
 //Validar seleccion usuario
             for (int i = 0; i < botones.length; i++) {
@@ -44,10 +44,14 @@ public class Gatos_app {
                     Gatos gato = new Gatos();
                     GatosService.verFavoritos(gato.getApikey());
                     break;
+                case 2:
+                    break;
+                case 3:
+                    GatosService.setBackgroundImageCat();
+                    break;
                 default:
                     break;
             }
         } while (opcion_menu != 1);
-
     }
 }
