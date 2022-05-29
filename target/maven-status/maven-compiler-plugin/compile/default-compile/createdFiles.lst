@@ -1,2 +1,11 @@
+com\cats\gatos_app\Model\GatosFav.class
+com\cats\gatos_app\Model\Imagex.class
+com\cats\gatos_app\Controller\GatosService.class
+com\cats\gatos_app\Model\Gatos.class
+com\cats\gatos_app\View\Inicio$1.class
+com\cats\gatos_app\View\Inicio$3.class
 com\cats\gatos_app\View\Inicio$2.class
+com\cats\gatos_app\View\Inicio.class
+.netbeans_automatic_build
 com\cats\gatos_app\Gatos_app.class
+com\cats\gatos_app\View\Inicio$4.class
